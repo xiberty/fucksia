@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block section %}
+	<section>
+		<h3>Este es un paso necesario y unico para poder experimentar una nueva plataforma.</h3>
+		<article>
+			<form method="post">
+				{% csrf_token %}
+				{{ form.as_p }}
+				<input type="submit" value="Guardar" />
+			</form>
+		</article>
+	</section>
+	<section id="instruccion">
+	    <h2>Instrucciones</h2>
+	    <article>
+	        <figure>
+	            <figcaption>Entrar al sistema academico de la carrera de informatica.</figcaption>
+	            <div>
+		            <img src="{{ STATIC_URL }}img/config1.jpg" alt="" id="ins1">
+	            </div>
+	        </figure>
+	        <figure>
+	            <figcaption>Entrar a "Horarios o Record Academico" y abrir "ver informe para imprimir".</figcaption>
+	            <div>
+	                <img src="{{ STATIC_URL }}img/config2.jpg" alt="" id="ins2">
+	            </div>
+	        </figure>
+	        <figure>
+	            <figcaption>Copiar la URL del informe para imprimir.</figcaption>
+	            <div>
+	                <img src="{{ STATIC_URL }}img/config3.jpg" alt="" id="ins3">
+	            </div>
+	        </figure>
+	    </article>
+	</section>
+{% endblock section %}

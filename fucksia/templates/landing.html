@@ -1,0 +1,33 @@
+{% extends 'layouts/base.html' %}
+{% load gravatar i18n %}
+{% block content %}
+
+    {% include "partials/_navbar.html" %}
+
+    <div class="jumbotron">
+      <div class="container">
+        <br><br>
+        <h2>{% trans " FuckSIA Project" %}</h2>
+        <p>Collaborative project to enhance <br>the experience of students in the UMSA.</p>
+        <p><a class="btn btn-primary btn-lg" role="button">View more &raquo;</a></p>
+      </div>
+    </div>
+    <div class="container">
+        <h3>How to Start?</h3>
+        <code>
+            $ make install <br/>
+            $ source env/bin/activate <br/>
+            $ pip install -r requirements/develop.txt <br/>
+            $ python manage.py syncdb --migrate <br/>
+            $ python manage.py runserver <br/>
+        </code>
+    </div>
+    <aside class="team">
+        <a href="https://twitter.com/xiberty">
+        <i class="fa fa-twitter"></i> @Xiberty Team</a>
+    </aside>
+{% endblock %}
+
+
+
+

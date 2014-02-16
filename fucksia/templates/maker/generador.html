@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block section %}
+{% include "menu.html" %}
+<section id="materias" class="inline">
+{% for mat in materias %}
+<div class="materia">
+    <div>{{ mat.materia.pk }}</div>
+    {% for par in mat.paralelo %}
+    <div class="checkbox-inline">
+        <label>
+        <input type="checkbox" value="{{ mat.materia.pk }}{{ par.fields.sigla_paralelo }}">{{ par.fields.sigla_paralelo }}
+        </label>
+    </div>
+    {% endfor %}
+</div>
+{% endfor %}
+<p></p>
+<Button onclick="getMateriasP()">Obtener combinaciones</Button>
+</section>
+
+<script>
+    function getMateriasP() {
+        var materias = new Array();
+        var materiasCheckbox = $('#materias input');
+        materiasCheckbox.each(function (index, domEle) {
+            if ($(domEle)[0].checked) {
+                materias.push($(domEle)[0].value)
+            }
+        });
+        var materiasString = materias.join(";");
+        Dajaxice.main.combinacion(resCombi, {'lista': materiasString})
+    }
+</script>
+
+<section class="wrap"></section>
+
+{% endblock %}

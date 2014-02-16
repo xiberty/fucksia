@@ -1,0 +1,46 @@
+{% load static from staticfiles %}
+{% load dajaxice_templatetags %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>Fucksia</title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{% static "css/stylebase.css" %}">
+	{% block stylesheets %}{% endblock %}
+	<script src="{% static "js/jquery.min.js" %}"></script>
+	<script src="{% static "js/callback.js" %}"></script>
+	<script src="{% static "js/discucion.js" %}"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+	{% block scripts %}{% endblock %}
+	{% dajaxice_js_import %}
+</head>
+<body>
+	<header>
+		<h1>Fucksia</h1>
+		<div id="sample">
+			{% if user.is_authenticated %}
+				{% include "mini_perfil.html" %}
+			{% endif %}
+		</div>
+	</header>
+	{% block section %}{% endblock %}
+	<footer>
+		<div class="powered">
+			<a href="https://www.djangoproject.com/‎" target="_blank">
+				<img id="pony" src="{% static "img/pony.png" %}" alt="logo">
+				<img id="django" src="{% static "img/django-logo.png" %}" alt="logo">
+			</a>
+			<h5>Hecho con el poderoso Framework Django.</h5>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="http://twitter.com/jhonlimaster" target="_blank">Twitter</a></li>
+				<li><a href="#http://plus.google.com/+JhonnyCruz" target="_blank">Google+</a></li>
+				<li><a href="http://github.com/irondroid" target="_blank">Github</a></li>
+			</ul>
+		</nav>
+	</footer>
+</body>
+</html>

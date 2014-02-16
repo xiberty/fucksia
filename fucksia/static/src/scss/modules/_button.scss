@@ -1,0 +1,50 @@
+
+.btn-block i {
+	font-size: 20px;
+	margin-left: 15px;
+}
+
+
+.btn-twitter,
+.btn-twitter.btn-circle > i {
+	background-color:#00c7f7;
+	color:#fff;
+}
+
+.btn-twitter:hover,
+.btn-twitter:focus,
+.btn-twitter:active,
+.btn-twitter.active,
+.btn-twitter.btn-circle:hover > i{
+	background-color:#2fcff6;
+	color:#fff;
+}
+
+.btn-facebook,
+.btn-facebook.btn-circle > i {
+	background-color:#335397;
+	color:#fff;
+}
+
+.btn-facebook:hover,
+.btn-facebook:focus,
+.btn-facebook:active,
+.btn-facebook.active,
+.btn-facebook.btn-circle:hover > i {
+	background-color:#4264ab;
+	color:#fff;
+}
+
+.btn-gplus,
+.btn-gplus.btn-circle > i{
+	background-color:#dd4a38;
+	color:#fff;
+}
+.btn-gplus:hover,
+.btn-gplus:focus,
+.btn-gplus:active,
+.btn-gplus.active,
+.btn-gplus.btn-circle:hover > i {
+	color:#fff;
+	background-color:#ea5e4d;
+}

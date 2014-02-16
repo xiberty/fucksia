@@ -1,0 +1,9 @@
+-r project.txt
+
+## Development Tools
+django-debug-toolbar  # Tool for debugging
+django-template-repl  # A templating debug tool
+fabric
+
+# Mail catcher only development mode and should be into system
+# sudo pip install maildump

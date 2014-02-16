@@ -1,0 +1,46 @@
+{% extends "partials/_navbar_base.html" %}
+{% load gravatar i18n %}
+{% block menu %}
+    <ul class="nav navbar-nav">
+        <li class="active"><a href="{% url 'home' %}">{% trans 'Home' %}</a></li>
+        <li><a href="{% url 'about' %}">{% trans 'About' %}</a></li>
+        <li><a href="{% url 'contact' %}">{% trans 'Contact' %}</a></li>
+    </ul>
+{% endblock %}
+{% block user_menu %}
+    <!-- SEARCH AND USER INFO -->
+    <ul class="nav navbar-nav navbar-right user-nav">
+        {% if user.is_authenticated %}
+        <li>
+            <input type="text" class="form-control search" placeholder="{% trans 'Search' %}">
+        </li>
+        <!-- USER AUTHENTICATED START -->
+        <li class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                <img class="user-avatar" alt="" src="{% gravatar_for_email user.email %}">
+                <span class="user-name">{{user.username}}</span>
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <div class="log-arrow-up"></div>
+                <li><a href="{% url 'profile' %}"><i class="fa fa-briefcase"></i>{% trans 'Profile' %}</a></li>
+                <li><a href="{% url 'settings' %}"><i class="fa fa-gear"></i>{% trans 'Settings' %}</a></li>
+                <li><a href="{% url 'timeline' %}"><i class="fa fa-bell"></i>{% trans 'Notifications' %}</a></li>
+                <li><a href="{% url 'logout' %}"><i class="fa fa-sign-out"></i>{% trans 'Log Out' %}</a></li>
+            </ul>
+        </li>
+        {% else %}
+            <li>
+                <a href="{% url 'new_account' %}" class="btn">
+                    <i class="fa fa-plus"> </i>
+                    {% trans 'Create Account' %}
+                </a>
+                <a href="{% url 'login' %}" class="btn">
+                    <i class="fa fa-sign-in"> </i>
+                    {% trans 'Log In' %}
+                </a>
+            </li>
+        {% endif %}
+        <!-- USER AUTHENTICATED START -->
+    </ul><!-- SEARCH AND USER INFO END-->
+{% endblock %}

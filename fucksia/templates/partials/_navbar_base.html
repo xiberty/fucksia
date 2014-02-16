@@ -1,0 +1,20 @@
+{% load gravatar i18n %}
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="navbar-header">
+        {% block header %}
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <i class="fa fa-group"></i> FuckSIA
+            </a>
+        {% endblock %}
+        </div>
+        <div class="collapse navbar-collapse">
+            {% block menu %}{% endblock %}
+            {% block user_menu %}{% endblock %}
+        </div>
+</div>

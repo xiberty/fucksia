@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block section %}
+{% include "menu.html" %}
+<section>
+	<h3>Comparte algo de alguna materia ;)</h3>
+	<article id="comentarios">
+		<div id="crear-comentario">
+			{% csrf_token %}
+			<input type="text" placeholder="Apunta algo...">
+			<div class="btn-group">
+				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+					Clasificar y publicar
+				</button>
+				<ul class="dropdown-menu" role="menu">
+				{% for mat in materias %}
+					<li><a href="#">{{ mat }}</a></li>
+				{% endfor %}
+				</ul>
+			</div>
+		</div>
+		<div class="container">
+			<ul id="ul-comentarios" class="list-unstyled">
+				{% for comentario in comentarios %}
+				<li class="col-md-5">
+					<div class="row">
+						<div class="col-md-3">
+							{% load thumbnail %}
+							{% thumbnail estudiante.avatar "50x50" crop="center" as im %}
+							    <img src="{{ im.url }}">
+							{% endthumbnail %}
+							<div>{{ comentario.materia.sigla }}</div>
+						</div>
+						<div class="col-md-8">
+							<div>{{ comentario.estudiante }}</div>
+							<div>{{ comentario.titulo }}</div>
+							<div>{{ comentario.fecha }}</div>
+						</div>
+					</div>
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</article>
+	<article id="respuestas"></article>
+</section>
+{% endblock section %}

@@ -1,0 +1,32 @@
+pytz==2013b
+Django
+docutils
+
+coverage
+psycopg2
+Pillow
+
+
+South
+django-compressor  #configurar en production
+django-mobility
+django-nose
+django-crispy-forms
+django_extensions #require sudo apt-get install graphviz-dev
+https://github.com/jvacx/django-gravatar/archive/master.zip#egg=django-gravatar
+https://github.com/pygraphviz/pygraphviz/archive/master.zip#egg=pygraphviz
+
+#Others
+python-memcached
+
+html2text
+https://github.com/jvacx/premailer/archive/master.zip#egg=premailer
+
+#Dependencies for maker
+Beautifulsoup
+django-dajaxice
+httplib2
+pystache
+sorl-thumbnail
+static
+wsgiref

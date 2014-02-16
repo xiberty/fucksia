@@ -1,0 +1,15 @@
+*.pyc
+*.pyo
+*.db
+.DS_Store
+.coverage
+
+
+fwme/settings/local.py
+public/
+.idea/
+.sass-cache/
+var/
+env/
+tools/
+fk/

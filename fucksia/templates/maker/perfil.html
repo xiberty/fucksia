@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+{% block section %}
+{% include "menu.html" %}
+	<section>
+		{% thumbnail estudiante.avatar "200x200" crop="center" as im %}
+		    <img src="{{ im.url }}">
+		{% endthumbnail %}
+		<h4>{{ estudiante.social_network }} - {{ user }}</h4>
+		<form method="post">
+			<div id="form">
+				{% csrf_token %}
+				{{ form.as_p }}
+				<input type="submit">
+			</div>
+		</form>
+	</section>
+{% endblock section %}

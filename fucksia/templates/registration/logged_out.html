@@ -1,0 +1,21 @@
+{% extends 'layouts/base.html' %}
+{% load i18n %}
+{% load static from staticfiles %}
+
+{% block title %}{% trans "Logged out" %}{% endblock %}
+{% block body_class %}signin-form{% endblock %}
+{% block content %}
+	<div class="logo"><img src="{% static 'img/logo.png' %}"  alt="" /></div>
+	<div class="content">
+		<h3 class="form-title">{% trans "Logged out" %}</h3>
+		<p class="description">{% trans "Thanks for spending some quality time with the Web site today." %}</p>
+		<hr>
+        <a href="{% url 'login' %}" class="btn btn-lg btn-success btn-block">
+            {% trans 'Log in again' %}
+        </a>
+        <a href="{% url 'home' %}" class="btn btn-lg btn-primary btn-block">
+        	{% trans 'Home' %}
+        </a>
+        <br>
+	</div>
+{% endblock %}

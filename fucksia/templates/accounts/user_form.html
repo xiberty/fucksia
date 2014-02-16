@@ -1,0 +1,49 @@
+{% extends 'layouts/base.html' %}
+{% load i18n crispy_forms_tags %}
+{% load static from staticfiles %}
+{% block title %}{% trans "Log in" %}{% endblock %}
+
+{% block body_class %}new-account{% endblock %}
+{% block content %}
+	{% include "partials/_navbar_base.html" %}
+	<div class="container">
+		<h1 class="title">{% trans "Create a new Account" %}</h1>
+		<div class="row">
+			<div class="col-md-8">
+				<div class="explain">
+					<h3>You Need an account now!</h3>
+					<blockquote class="phrase">
+					"In Silicon Valley" is on my list of
+						things that deal break a job offer for me.
+						Pretty much the only reason I'd go back there is
+						"actually changing the world" or maybe possibly
+						"my wife has a really good reason".
+					</blockquote>
+				</div>
+				<div class="explain">
+					<h3>Customize Startup Account to your liking</h3>
+					<blockquote class="phrase">
+					    "In Silicon Valley" is on my list of
+						things that deal break a job offer for me.
+						Pretty much the only reason I'd go back there is
+						"actually changing the world" or maybe possibly
+						"my wife has a really good reason".
+					</blockquote>
+				</div>
+				<div class="explain">
+					<h3>Your information is always available</h3>
+					<blockquote class="phrase">
+					    In Silicon Valley" is on my list of
+						things that deal break a job offer for me.
+						Pretty much the only reason I'd go back there is
+						"actually changing the world" or maybe possibly
+						"my wife has a really good reason".
+					</blockquote>
+				</div>
+			</div>
+			<div class="col-md-4">
+				{% crispy form %}
+			</div>
+		</div>
+	</div>
+{% endblock  %}

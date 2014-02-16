@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% block section %}
+{% include "menu.html" %}
+	<section id="materias" class="inline">
+	Aqui va el horario de la gestion actual
+	<h4>{{ gestion_actual }}</h4>
+	{% for mat in materias %}
+	<div class="materia">
+	    <div>{{ mat.materia.pk }}</div>
+	    {% for par in mat.paralelo %}
+	    <div class="radio-inline" onclick="Dajaxice.main.horario(put_horario, {'mat':'{{ mat.materia.pk }}', 'par':'{{par.fields.sigla_paralelo}}' })">
+	        <input type="radio" name="{{ mat.materia.pk }}" value="{{ mat.materia.pk }}{{ par.fields.sigla_paralelo }}">{{ par.fields.sigla_paralelo }}
+	    </div>
+	    {% endfor %}
+	</div>
+	{% endfor %}
+
+	<table id="table" class="table table-striped">
+		<tr>
+			<td>Horas</td>
+			<td>Lunes</td>
+			<td>Martes</td>
+			<td>Miercoles</td>
+			<td>Jueves</td>
+			<td>Viernes</td>
+			<td>Sabado</td>
+		</tr>
+		<tr id="8-10">
+			<td>8-10</td>
+			<td id="LU8-10" class="periodo">&nbsp;</td>
+			<td id="MA8-10" class="periodo">&nbsp;</td>
+			<td id="MI8-10" class="periodo">&nbsp;</td>
+			<td id="JU8-10" class="periodo">&nbsp;</td>
+			<td id="VI8-10" class="periodo">&nbsp;</td>
+			<td id="SA8-10" class="periodo">&nbsp;</td>
+		</tr>
+		<tr id="10-12">
+			<td>10-12</td>
+			<td id="LU10-12" class="periodo">&nbsp;</td>
+			<td id="MA10-12" class="periodo">&nbsp;</td>
+			<td id="MI10-12" class="periodo">&nbsp;</td>
+			<td id="JU10-12" class="periodo">&nbsp;</td>
+			<td id="VI10-12" class="periodo">&nbsp;</td>
+			<td id="SA10-12" class="periodo">&nbsp;</td>
+		</tr>
+		<tr id="12-14">
+			<td>12-14</td>
+			<td id="LU12-14" class="periodo">&nbsp;</td>
+			<td id="MA12-14" class="periodo">&nbsp;</td>
+			<td id="MI12-14" class="periodo">&nbsp;</td>
+			<td id="JU12-14" class="periodo">&nbsp;</td>
+			<td id="VI12-14" class="periodo">&nbsp;</td>
+			<td id="SA12-14" class="periodo">&nbsp;</td>
+		</tr>
+		<tr id="14-16">
+			<td>14-16</td>
+			<td id="LU14-16" class="periodo">&nbsp;</td>
+			<td id="MA14-16" class="periodo">&nbsp;</td>
+			<td id="MI14-16" class="periodo">&nbsp;</td>
+			<td id="JU14-16" class="periodo">&nbsp;</td>
+			<td id="VI14-16" class="periodo">&nbsp;</td>
+			<td id="SA14-16" class="periodo">&nbsp;</td>
+		</tr>
+		<tr id="16-18">
+			<td>16-18</td>
+			<td id="LU16-18" class="periodo">&nbsp;</td>
+			<td id="MA16-18" class="periodo">&nbsp;</td>
+			<td id="MI16-18" class="periodo">&nbsp;</td>
+			<td id="JU16-18" class="periodo">&nbsp;</td>
+			<td id="VI16-18" class="periodo">&nbsp;</td>
+			<td id="SA16-18" class="periodo">&nbsp;</td>
+		</tr>
+		<tr id="18-20">
+			<td>18-20</td>
+			<td id="LU18-20" class="periodo">&nbsp;</td>
+			<td id="MA18-20" class="periodo">&nbsp;</td>
+			<td id="MI18-20" class="periodo">&nbsp;</td>
+			<td id="JU18-20" class="periodo">&nbsp;</td>
+			<td id="VI18-20" class="periodo">&nbsp;</td>
+			<td id="SA18-20" class="periodo">&nbsp;</td>
+		</tr>
+		<tr id="20-22">
+			<td>20-22</td>
+			<td id="LU20-22" class="periodo">&nbsp;</td>
+			<td id="MA20-22" class="periodo">&nbsp;</td>
+			<td id="MI20-22" class="periodo">&nbsp;</td>
+			<td id="JU20-22" class="periodo">&nbsp;</td>
+			<td id="VI20-22" class="periodo">&nbsp;</td>
+			<td id="SA20-22" class="periodo">&nbsp;</td>
+		</tr>
+	</table>
+	</section>
+{% endblock %}

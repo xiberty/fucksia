@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block section %}
+<section>
+	{% load static from staticfiles %}
+	<h3>Esta va ser la nueva plataforma para reemplazar el absurdo SIA.</h3>
+	<article>
+		<img src="{% static "img/estudiar.jpg" %}" alt="fondo">
+	</article>
+	<h4>Encuentra un trabajo que te guste y... nunca tendras que trabajar - Confucio</h4>
+	<div>
+		<a href="{% url "socialauth_begin" "twitter" %}">
+			<img src="{% static "img/twitter.jpg" %}" alt="">
+		</a>
+		<a href="{% url "socialauth_begin" "facebook" %}">
+			<img src="{% static "img/facebook.jpg" %}" alt="">
+		</a>
+	</div>
+</section>
+{% endblock section %}

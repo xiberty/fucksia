@@ -1,0 +1,22 @@
+{% extends 'layouts/base.html' %}
+{% load i18n crispy_forms_tags %}
+{% load static from staticfiles %}
+{% block title %}{% trans "Log in" %}{% endblock %}
+
+{% block body_class %}signin-form{% endblock %}
+{% block content %}
+	<div class="logo"><img src="{% static 'img/logo.png' %}"  alt="" /></div>
+	<div class="content">
+		<form class="login-form" action="" method="post">
+			<h3 class="form-title">{% trans "Log in" %}</h3>
+			{% crispy form %}
+			<hr>
+            <a href="" class="btn btn-lg btn-facebook btn-block"><i class="fa fa-facebook pull-left"></i>{% trans "Sign in with Facebook" %}</a>
+            <a href="" class="btn btn-lg btn-twitter btn-block"><i class="fa fa-twitter pull-left"></i>{% trans "Sign in with Twitter" %}</a>
+			<hr>
+			<p class="text-muted text-center"><small>{% trans "Already have an account?" %}</small></p>
+			<a href="{% url 'new_account' %}" class="btn btn-lg btn-block btn-default">{% trans "Create an account" %}</a><br>
+            <p><a href="{% url 'password_reset' %}">{% trans 'Forgotten password?' %}</a></p>
+		</form>
+	</div>
+{% endblock %}
