@@ -23,7 +23,7 @@ html2text
 https://github.com/jvacx/premailer/archive/master.zip#egg=premailer
 
 #Dependencies for maker
-Beautifulsoup
+Beautifulsoup4
 django-dajaxice
 httplib2
 pystache
